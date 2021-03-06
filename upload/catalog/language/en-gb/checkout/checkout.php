@@ -95,3 +95,5 @@ $_['error_payment']                  = 'Warning: Payment method required!';
 $_['error_no_payment']               = 'Warning: No Payment options are available. Please <a href="%s">contact us</a> for assistance!';
 $_['error_custom_field']             = '%s required!';
 $_['error_regex']                    = '%s not a valid input!';
+$_['error_gst_number']               = 'Please Enter Correct GST number';
+$_['error_drug_license']             = 'Please Enter Correct Drug License Number';
