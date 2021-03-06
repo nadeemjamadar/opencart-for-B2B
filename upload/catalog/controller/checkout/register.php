@@ -129,6 +129,8 @@ class Register extends \Opencart\System\Engine\Controller {
 				'postcode',
 				'country_id',
 				'zone_id'
+				'gst_number'
+				'drug_license'
 			];
 
 			foreach ($keys as $key) {
@@ -166,6 +168,12 @@ class Register extends \Opencart\System\Engine\Controller {
 
 			if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
 				$json['error']['city'] = $this->language->get('error_city');
+			}
+			if ((utf8_strlen(trim($this->request->post['gst_number'])) < 3) || (utf8_strlen(trim($this->request->post['gst_number'])) > 128)) {
+				$json['error']['gst_number'] = $this->language->get('error_gst_number');
+			}
+			if ((utf8_strlen(trim($this->request->post['drug_license'])) < 3) || (utf8_strlen(trim($this->request->post['drug_license'])) > 128)) {
+				$json['error']['drug_license'] = $this->language->get('error_drug_license');
 			}
 
 			$this->load->model('localisation/country');
